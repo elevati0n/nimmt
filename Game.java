@@ -65,13 +65,15 @@ public class Game {
             for (CardStack stack : gameTable.stacks) {
                 if (card.faceValue > stack.topValue()) {
                     int difference = card.faceValue - stack.topValue();
-                    if (lowestValue == 9999999) {
-                        lowestValue = difference;
-                    } else {
-                        if (difference > lowestValue) {
-
-                        } else {
+                    if (difference > 0) {
+                        if (lowestValue == 9999999) {
                             lowestValue = difference;
+                        } else {
+                            if (difference > lowestValue) {
+
+                            } else {
+                                lowestValue = difference;
+                            }
                         }
                     }
                 }
